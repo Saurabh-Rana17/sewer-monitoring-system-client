@@ -5,24 +5,17 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
 import Home from "./pages/Home";
-import Layout from "./pages/Layout";
-import Page2 from "./pages/Page2";
-import Page3 from "./pages/Page3";
-import Page4 from "./pages/Page4";
-import Page1 from "./pages/Page1";
 
 export default function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/page1" element={<Page1 />} />
-          <Route path="/page2" element={<Page2 />} />
-          <Route path="/page3" element={<Page3 />} />
-          <Route path="/page4" element={<Page4 />} />
-        </Route>
+        <Route path="/" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/home" element={<Home />} />
       </>
     )
   );
