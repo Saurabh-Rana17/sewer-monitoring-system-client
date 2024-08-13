@@ -6,11 +6,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import Page1 from "./pages/page1";
 import Layout from "./pages/Layout";
 import Page2 from "./pages/Page2";
 import Page3 from "./pages/Page3";
 import Page4 from "./pages/Page4";
+import Page1 from "./pages/Page1";
 
 export default function App() {
   const router = createBrowserRouter(
