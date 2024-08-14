@@ -11,7 +11,7 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Unstable_Grid2"; // Import Grid from MUI
-import { blue } from "@mui/material/colors";
+import { blue, teal } from "@mui/material/colors";
 
 function BasicCard() {
   const navigate = useNavigate();
@@ -74,7 +74,7 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            <Box sx={{ backgroundColor: blue[500], paddingY: "0.75rem" }}>
+            <Box sx={{ backgroundColor: teal[500], paddingY: "0.75rem" }}>
               <Typography
                 fontWeight="bold"
                 color="white"
@@ -139,7 +139,7 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            <Box sx={{ backgroundColor: blue[500], paddingY: "0.75rem" }}>
+            <Box sx={{ backgroundColor: teal[500], paddingY: "0.75rem" }}>
               <Typography
                 fontWeight="bold"
                 color="white"
@@ -204,7 +204,7 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            <Box sx={{ backgroundColor: blue[500], paddingY: "0.75rem" }}>
+            <Box sx={{ backgroundColor: teal[500], paddingY: "0.75rem" }}>
               <Typography
                 fontWeight="bold"
                 color="white"
@@ -269,7 +269,7 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            <Box sx={{ backgroundColor: blue[500], paddingY: "0.75rem" }}>
+            <Box sx={{ backgroundColor: teal[500], paddingY: "0.75rem" }}>
               <Typography
                 fontWeight="bold"
                 color="white"
