@@ -74,7 +74,7 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            <Box sx={{ backgroundColor: teal[500], paddingY: "0.75rem" }}>
+            <Box sx={{ backgroundColor: "#3949ab", paddingY: "0.75rem" }}>
               <Typography
                 fontWeight="bold"
                 color="white"
@@ -139,14 +139,14 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            <Box sx={{ backgroundColor: teal[500], paddingY: "0.75rem" }}>
+            <Box sx={{ backgroundColor: "#f4511e", paddingY: "0.75rem" }}>
               <Typography
                 fontWeight="bold"
                 color="white"
                 align="center"
                 variant="h6"
               >
-                Zone 1
+                Zone 2
               </Typography>
             </Box>
             <CardContent sx={{ padding: "1.5rem" }}>
@@ -204,14 +204,14 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            <Box sx={{ backgroundColor: teal[500], paddingY: "0.75rem" }}>
+            <Box sx={{ backgroundColor: "#43a047", paddingY: "0.75rem" }}>
               <Typography
                 fontWeight="bold"
                 color="white"
                 align="center"
                 variant="h6"
               >
-                Zone 1
+                Zone 3
               </Typography>
             </Box>
             <CardContent sx={{ padding: "1.5rem" }}>
@@ -269,14 +269,14 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            <Box sx={{ backgroundColor: teal[500], paddingY: "0.75rem" }}>
+            <Box sx={{ backgroundColor: "#00acc1", paddingY: "0.75rem" }}>
               <Typography
                 fontWeight="bold"
                 color="white"
                 align="center"
                 variant="h6"
               >
-                Zone 1
+                Zone 4
               </Typography>
             </Box>
             <CardContent sx={{ padding: "1.5rem" }}>
