@@ -9,6 +9,7 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Zone from "./pages/Zone";
+import Graph from "./pages/Graph";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
         <Route path="/home/zone1" element={<Zone />} />
+        <Route path="/graph" element={<Graph />} />
       </>
     )
   );

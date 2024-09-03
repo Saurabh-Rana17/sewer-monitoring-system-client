@@ -12,8 +12,13 @@ import React from "react";
 import Grid from "@mui/material/Unstable_Grid2"; // Import Grid from MUI
 import { green } from "@mui/material/colors";
 import GaugeComponent from "react-gauge-component";
+import { useNavigate } from "react-router-dom";
 
 function BasicCard() {
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate("/graph");
+  }
   return (
     <Grid xs={12} md={4} sm={6} lg={3}>
       <Card
@@ -90,7 +95,12 @@ function BasicCard() {
           </Typography>
         </CardContent>
         <CardActions sx={{ justifyContent: "center", padding: "1rem" }}>
-          <Button size="medium" variant="contained" color="primary">
+          <Button
+            onClick={handleClick}
+            size="medium"
+            variant="contained"
+            color="primary"
+          >
             View More
           </Button>
         </CardActions>
@@ -100,6 +110,10 @@ function BasicCard() {
 }
 
 export default function Zone() {
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate("/graph");
+  }
   return (
     <div>
       <Grid2 padding={{ xs: "0.5rem" }} spacing={2} container>
@@ -181,7 +195,12 @@ export default function Zone() {
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: "center", padding: "1rem" }}>
-              <Button size="medium" variant="contained" color="primary">
+              <Button
+                onClick={handleClick}
+                size="medium"
+                variant="contained"
+                color="primary"
+              >
                 View More
               </Button>
             </CardActions>
@@ -264,7 +283,12 @@ export default function Zone() {
               </Typography>
             </CardContent>
             <CardActions sx={{ justifyContent: "center", padding: "1rem" }}>
-              <Button size="medium" variant="contained" color="primary">
+              <Button
+                onClick={handleClick}
+                size="medium"
+                variant="contained"
+                color="primary"
+              >
                 View More
               </Button>
             </CardActions>
