@@ -97,9 +97,9 @@ export default function Graph() {
         <Grid size={{ xs: 12, md: 6 }}>
           <BasicLineChart />
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
-          <PieArcLabel />
-        </Grid>
+        {/* <Grid size={{ xs: 12, md: 6 }}> */}
+        <PieArcLabel />
+        {/* </Grid> */}
       </Grid>
     </>
   );

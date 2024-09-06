@@ -324,8 +324,8 @@ export default function Home() {
             </CardActions>
           </Card>
         </Grid>
-
-        {/* <Grid xs={12} md={4} sm={6} lg={3}>
+        {/* new */}
+        <Grid xs={12} md={4} sm={6} lg={3}>
           <Card
             sx={{
               minWidth: 275,
@@ -334,14 +334,14 @@ export default function Home() {
               overflow: "hidden",
             }}
           >
-            <Box sx={{ backgroundColor: "#00796b", paddingY: "0.75rem" }}>
+            <Box sx={{ backgroundColor: "#00acc1", paddingY: "0.75rem" }}>
               <Typography
                 fontWeight="bold"
                 color="white"
                 align="center"
                 variant="h6"
               >
-                Zone 1
+                Zone 5
               </Typography>
             </Box>
             <CardContent sx={{ padding: "1.5rem" }}>
@@ -388,7 +388,202 @@ export default function Home() {
               </Button>
             </CardActions>
           </Card>
-        </Grid> */}
+        </Grid>
+        {/* new */}
+        <Grid xs={12} md={4} sm={6} lg={3}>
+          <Card
+            sx={{
+              minWidth: 275,
+              boxShadow: 3,
+              borderRadius: 2,
+              overflow: "hidden",
+            }}
+          >
+            <Box sx={{ backgroundColor: "#43a047", paddingY: "0.75rem" }}>
+              <Typography
+                fontWeight="bold"
+                color="white"
+                align="center"
+                variant="h6"
+              >
+                Zone 6
+              </Typography>
+            </Box>
+            <CardContent sx={{ padding: "1.5rem" }}>
+              <Typography mb={2} fontWeight="medium" variant="body1">
+                Total Sewers: 3
+              </Typography>
+              <Box
+                sx={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
+              >
+                <Box
+                  sx={{
+                    backgroundColor: "red",
+                    paddingX: "1rem",
+                    paddingY: "0.5rem",
+                    borderRadius: 2,
+                  }}
+                >
+                  <Typography color="white" fontWeight="bold">
+                    Critical: 1
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    backgroundColor: "orange",
+                    paddingX: "1rem",
+                    paddingY: "0.5rem",
+                    borderRadius: 2,
+                  }}
+                >
+                  <Typography color="white" fontWeight="bold">
+                    Warning: 1
+                  </Typography>
+                </Box>
+              </Box>
+            </CardContent>
+            <CardActions sx={{ justifyContent: "center", padding: "1rem" }}>
+              <Button
+                onClick={() => navigate("/home/zone1")}
+                size="medium"
+                variant="contained"
+                color="primary"
+              >
+                View More
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+        {/* new */}
+        <Grid xs={12} md={4} sm={6} lg={3}>
+          <Card
+            sx={{
+              minWidth: 275,
+              boxShadow: 3,
+              borderRadius: 2,
+              overflow: "hidden",
+            }}
+          >
+            <Box sx={{ backgroundColor: "#3f50b5", paddingY: "0.75rem" }}>
+              <Typography
+                fontWeight="bold"
+                color="white"
+                align="center"
+                variant="h6"
+              >
+                Zone 7
+              </Typography>
+            </Box>
+            <CardContent sx={{ padding: "1.5rem" }}>
+              <Typography mb={2} fontWeight="medium" variant="body1">
+                Total Sewers: 3
+              </Typography>
+              <Box
+                sx={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
+              >
+                <Box
+                  sx={{
+                    backgroundColor: "red",
+                    paddingX: "1rem",
+                    paddingY: "0.5rem",
+                    borderRadius: 2,
+                  }}
+                >
+                  <Typography color="white" fontWeight="bold">
+                    Critical: 1
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    backgroundColor: "orange",
+                    paddingX: "1rem",
+                    paddingY: "0.5rem",
+                    borderRadius: 2,
+                  }}
+                >
+                  <Typography color="white" fontWeight="bold">
+                    Warning: 1
+                  </Typography>
+                </Box>
+              </Box>
+            </CardContent>
+            <CardActions sx={{ justifyContent: "center", padding: "1rem" }}>
+              <Button
+                onClick={() => navigate("/home/zone1")}
+                size="medium"
+                variant="contained"
+                color="primary"
+              >
+                View More
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+        {/* new */}
+        <Grid xs={12} md={4} sm={6} lg={3}>
+          <Card
+            sx={{
+              minWidth: 275,
+              boxShadow: 3,
+              borderRadius: 2,
+              overflow: "hidden",
+            }}
+          >
+            <Box sx={{ backgroundColor: "#f4511e", paddingY: "0.75rem" }}>
+              <Typography
+                fontWeight="bold"
+                color="white"
+                align="center"
+                variant="h6"
+              >
+                Zone 8
+              </Typography>
+            </Box>
+            <CardContent sx={{ padding: "1.5rem" }}>
+              <Typography mb={2} fontWeight="medium" variant="body1">
+                Total Sewers: 3
+              </Typography>
+              <Box
+                sx={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
+              >
+                <Box
+                  sx={{
+                    backgroundColor: "red",
+                    paddingX: "1rem",
+                    paddingY: "0.5rem",
+                    borderRadius: 2,
+                  }}
+                >
+                  <Typography color="white" fontWeight="bold">
+                    Critical: 1
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    backgroundColor: "orange",
+                    paddingX: "1rem",
+                    paddingY: "0.5rem",
+                    borderRadius: 2,
+                  }}
+                >
+                  <Typography color="white" fontWeight="bold">
+                    Warning: 1
+                  </Typography>
+                </Box>
+              </Box>
+            </CardContent>
+            <CardActions sx={{ justifyContent: "center", padding: "1rem" }}>
+              <Button
+                onClick={() => navigate("/home/zone1")}
+                size="medium"
+                variant="contained"
+                color="primary"
+              >
+                View More
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
       </Grid2>
     </div>
   );
