@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Zone from "./pages/Zone";
 import Graph from "./pages/Graph";
 

@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import {
   BarChart,
@@ -114,7 +114,7 @@ export default function Graph() {
     eventSource.onmessage = (event) => {
       const updatedData = JSON.parse(event.data);
       const arr = Object.values(updatedData);
-      const last = arr.slice(-15);
+      const last = arr.slice(-20);
       setHist(last);
       const average = arr.reduce((acc, val) => acc + val, 0) / arr.length;
 
@@ -137,13 +137,19 @@ export default function Graph() {
         <Grid size={{ xs: 12, md: 6 }}>
           <SimpleCharts data={data} />
         </Grid>
-        <SparkLineChart
-          data={hist}
-          height={400}
-          width={1000}
-          showHighlight={true}
-          showTooltip={true}
-        />
+        <Box border={1} borderColor={"black"}>
+          <SparkLineChart
+            data={hist}
+            yAxis={{
+              min: -1,
+              max: 2,
+            }}
+            height={400}
+            width={1000}
+            showHighlight={true}
+            showTooltip={true}
+          />
+        </Box>
       </Grid>
     </>
   );
