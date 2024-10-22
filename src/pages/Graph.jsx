@@ -10,6 +10,7 @@ import {
 function SimpleCharts() {
   return (
     <BarChart
+      tooltip={{}}
       xAxis={[
         {
           id: "barCategories",
@@ -39,14 +40,25 @@ function SimpleCharts() {
 function BasicLineChart() {
   return (
     <LineChart
-      xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+      onAxisClick={() => console.log("first")}
+      disableAxisListener
+      disableLineItemHighlight
+      xAxis={[
+        {
+          data: [
+            3, 5, 4, 6, 3, 4, 2, 5, 3, 6, 4, 7, 3, 6, 7, 4, 3, 6, 7, 4, 5, 3, 6,
+            4, 5, 3, 4, 6, 3, 2, 5, 4, 3, 2, 6, 4, 5, 6, 3, 2, 5, 1, 2,
+          ],
+        },
+      ]}
       series={[
         {
-          data: [2, 5.5, 2, 8.5, 1.5, 5],
+          data: [1, 2],
         },
       ]}
       width={500}
       height={300}
+      tooltip={{}}
     />
   );
 }
@@ -66,6 +78,7 @@ const size = {
 function PieArcLabel() {
   return (
     <PieChart
+      tooltip={{}}
       series={[
         {
           arcLabel: (item) => `${item.label} (${item.value})`,
