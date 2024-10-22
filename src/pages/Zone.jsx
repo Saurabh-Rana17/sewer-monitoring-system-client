@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@mui/material/Unstable_Grid2"; // Import Grid from MUI
 import { green } from "@mui/material/colors";
 import GaugeComponent from "react-gauge-component";
@@ -19,6 +19,33 @@ function BasicCard() {
   function handleClick() {
     navigate("/graph");
   }
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const eventSource = new EventSource("http://localhost:5000/events");
+
+    eventSource.onmessage = (event) => {
+      const updatedData = JSON.parse(event.data);
+      const arr = Object.values(updatedData);
+      // console.log(arr[arr.length - 1]);
+      const val = Math.floor(arr[arr.length - 1] * 100);
+      const random = Math.random() * 10;
+      if (random > 4) {
+        setData(Math.floor(Math.random() * 5 + 4));
+      } else if (random < 4) {
+        setData(Math.floor(Math.random() * 15 + 45));
+      } else {
+        setData(val);
+      }
+    };
+
+    return () => {
+      eventSource.close();
+    };
+  }, []);
+
+  console.log(data);
+
   return (
     <Grid xs={12} md={4} sm={6} lg={3}>
       <Card
@@ -42,8 +69,8 @@ function BasicCard() {
         <Divider />
         <CardContent sx={{ padding: "1.5rem", textAlign: "center" }}>
           <div>
-            <GaugeComponent
-              value={80}
+            {/* <GaugeComponent
+              value={data}
               type="semicircle"
               labels={{
                 valueLabel: {
@@ -79,9 +106,36 @@ function BasicCard() {
               }}
               pointer={{
                 type: "arrow",
-                elastic: true,
+                // elastic: true,
                 animationDelay: 0,
               }}
+            /> */}
+            <GaugeComponent
+              arc={{
+                subArcs: [
+                  {
+                    limit: 25,
+                    color: "#5BE12C",
+                    showTick: true,
+                  },
+                  {
+                    limit: 50,
+                    color: "#F5CD19",
+                    showTick: true,
+                  },
+                  {
+                    limit: 75,
+                    color: "#F58B19",
+                    showTick: true,
+                  },
+                  {
+                    limit: 100,
+                    color: "#EA4228",
+                    showTick: true,
+                  },
+                ],
+              }}
+              value={data}
             />
           </div>
           <Typography variant="body2" color="textSecondary" mb={1}>
@@ -179,6 +233,7 @@ export default function Zone() {
                   }}
                   pointer={{
                     type: "arrow",
+                    // animate: true,
                     elastic: true,
                     animationDelay: 0,
                   }}

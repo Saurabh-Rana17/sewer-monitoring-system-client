@@ -5,9 +5,11 @@ import {
   LineChart,
   pieArcLabelClasses,
   PieChart,
+  SparkLineChart,
 } from "@mui/x-charts";
+import { useEffect, useState } from "react";
 
-function SimpleCharts() {
+function SimpleCharts({ data }) {
   return (
     <BarChart
       tooltip={{}}
@@ -15,24 +17,29 @@ function SimpleCharts() {
         {
           id: "barCategories",
           data: [
-            "monday",
-            "tuesday",
-            "W'day",
-            "thursday",
-            "friday",
-            "saturday",
-            "sunday",
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
           ],
           scaleType: "band",
         },
       ]}
       series={[
         {
-          data: [2, 4, 3, 1, 3.5, 3, 5],
+          data: [0.5, 0.3, 0.1, 0.1, 0.2, 0, 0, 0, 0, data, 0, 0],
         },
       ]}
-      width={500}
-      height={300}
+      width={1000}
+      height={500}
     />
   );
 }
@@ -75,29 +82,52 @@ const size = {
   height: 200,
 };
 
-function PieArcLabel() {
-  return (
-    <PieChart
-      tooltip={{}}
-      series={[
-        {
-          arcLabel: (item) => `${item.label} (${item.value})`,
-          arcLabelMinAngle: 45,
-          data,
-        },
-      ]}
-      sx={{
-        [`& .${pieArcLabelClasses.root}`]: {
-          fill: "white",
-          fontWeight: "bold",
-        },
-      }}
-      {...size}
-    />
-  );
-}
+// function PieArcLabel() {
+//   return (
+//     <PieChart
+//       tooltip={{}}
+//       series={[
+//         {
+//           arcLabel: (item) => `${item.label} (${item.value})`,
+//           arcLabelMinAngle: 45,
+//           data,
+//         },
+//       ]}
+//       sx={{
+//         [`& .${pieArcLabelClasses.root}`]: {
+//           fill: "white",
+//           fontWeight: "bold",
+//         },
+//       }}
+//       {...size}
+//     />
+//   );
+// }
 
 export default function Graph() {
+  const [data, setData] = useState(null);
+  const [hist, setHist] = useState([]);
+
+  useEffect(() => {
+    const eventSource = new EventSource("http://localhost:5000/events");
+
+    eventSource.onmessage = (event) => {
+      const updatedData = JSON.parse(event.data);
+      const arr = Object.values(updatedData);
+      const last = arr.slice(-15);
+      setHist(last);
+      const average = arr.reduce((acc, val) => acc + val, 0) / arr.length;
+
+      setData(average * 10);
+    };
+
+    return () => {
+      eventSource.close();
+    };
+  }, []);
+
+  console.log(data);
+
   return (
     <>
       <Typography variant="h5" align="center">
@@ -105,14 +135,15 @@ export default function Graph() {
       </Typography>
       <Grid padding={{ xs: "0.5rem" }} container spacing={2}>
         <Grid size={{ xs: 12, md: 6 }}>
-          <SimpleCharts />
+          <SimpleCharts data={data} />
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
-          <BasicLineChart />
-        </Grid>
-        {/* <Grid size={{ xs: 12, md: 6 }}> */}
-        <PieArcLabel />
-        {/* </Grid> */}
+        <SparkLineChart
+          data={hist}
+          height={400}
+          width={1000}
+          showHighlight={true}
+          showTooltip={true}
+        />
       </Grid>
     </>
   );

@@ -4,7 +4,6 @@ import {
   Card,
   CardActions,
   CardContent,
-  Divider,
   Typography,
 } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
@@ -14,28 +13,13 @@ import Grid from "@mui/material/Unstable_Grid2"; // Import Grid from MUI
 import { blue, teal } from "@mui/material/colors";
 
 export default function Home() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const eventSource = new EventSource("http://localhost:5000/events");
-
-    eventSource.onmessage = (event) => {
-      const updatedData = JSON.parse(event.data);
-      setData(updatedData);
-    };
-
-    return () => {
-      eventSource.close();
-    };
-  }, []);
-
   const navigate = useNavigate();
 
   return (
     <div>
       <div>
         <h1>Real-Time Sewer Monitoring</h1>
-        {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : <p>Loading...</p>}
+        {/* {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : <p>Loading...</p>} */}
       </div>
       <Grid2 padding={{ xs: "0.5rem" }} spacing={2} container>
         <Grid xs={12} md={4} sm={6} lg={3}>
